@@ -25,12 +25,10 @@ forecast_df['ds'] = pd.to_datetime(forecast_df['ds'])
 chart_data = forecast_df.set_index('ds')[['yhat', 'yhat_lower', 'yhat_upper']]
 st.line_chart(chart_data)
 
-# 4. Anomalous Activities
 st.subheader("Detected Anomalies")
 anomalies = df[df["anomaly"] == -1]
 st.dataframe(anomalies)
 
-# Add to app.py
 st.subheader("System API Endpoints")
 st.write("Live Forecast Endpoint: [http://127.0.0.1:5000/forecast](http://127.0.0.1:5000/forecast)")
 st.write("Live Anomaly Endpoint: [http://127.0.0.1:5000/anomalies](http://127.0.0.1:5000/anomalies)")
