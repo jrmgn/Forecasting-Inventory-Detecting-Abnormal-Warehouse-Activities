@@ -24,5 +24,4 @@ def get_anomalies():
     return jsonify(anomalies.to_dict(orient="records"))
 
 if __name__ == "__main__":
-    # Standard Flask run command
     app.run(debug=True)
